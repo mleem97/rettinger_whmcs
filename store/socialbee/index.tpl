@@ -183,7 +183,7 @@
                 </div>
             </div>
 
-            <button>{lang key='store.socialbee.packages'}</button>
+            <button class="view-pricing-btn">{lang key='store.socialbee.packages'}</button>
         </div>
 
         <div class="pricing__header">
@@ -387,6 +387,15 @@
     :root {
         --max-width: 1248px;
         --yellow: #f3c500;
+    }
+
+    body, html {
+        overflow-x: hidden;
+    }
+
+    .social-bee {
+        width: 100%;
+        overflow-x: hidden;
     }
 
     section#main-body {
@@ -683,6 +692,13 @@
     }
 
     @media (max-width: 768px) {
+        .social-bee .hero h2 {
+            width: 100%;
+            font-size: 28px;
+            padding: 0 16px;
+            box-sizing: border-box;
+        }
+
         .social-bee .action-buttons {
             gap: 0;
             flex-wrap: wrap;
@@ -875,19 +891,12 @@
 
 <script>
     const learnMoreBtn = document.querySelector('.content-block button');
-    const viewPricingBtn = document.querySelector('.features button');
+    const viewPricingBtn = document.querySelector('.view-pricing-btn');
 
     const pricingTable = document.querySelector('.pricing-table-container');
 
     function scrollToElement(element) {
-        const rect = element.getBoundingClientRect();
-
-        const scrollTop = window.pageYOffset + rect.top - 16;
-
-        window.scrollTo({
-            top: scrollTop,
-            behavior: 'smooth'
-        });
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     if (learnMoreBtn) {

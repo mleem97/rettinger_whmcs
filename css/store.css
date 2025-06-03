@@ -448,8 +448,8 @@ section#main-body {
 .landing-page.ssl .validation-levels .item {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 10% 15% 15% 10% 30% auto;
-    row-gap: 20px;
+    grid-template-rows: 3fr 5fr 5fr 4fr 9fr auto;
+    row-gap: 10px;
     height: 100% !important;
     margin: 20px 0 20px 0;
     padding: 30px 30px;
