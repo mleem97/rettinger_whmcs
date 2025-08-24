@@ -1,26 +1,29 @@
 {foreach $sidebar as $item}
-    <div menuItemName="{$item->getName()}" class="mb-3 card card-sidebar{if $item->getClass()} {$item->getClass()}{/if}{if $item->getExtra('mobileSelect') and $item->hasChildren()} d-none d-md-block{/if}"{if $item->getAttribute('id')} id="{$item->getAttribute('id')}"{/if}>
-        <div class="card-header">
-            <h3 class="card-title m-0">
-                {if $item->hasIcon()}<i class="{$item->getIcon()}"></i>&nbsp;{/if}
-                {$item->getLabel()}
-                {if $item->hasBadge()}&nbsp;<span class="badge float-right">{$item->getBadge()}</span>{/if}
-                <i class="fas fa-chevron-up card-minimise float-right"></i>
+    <div menuItemName="{$item->getName()}" class="mb-3 card{if $item->getClass()} {$item->getClass()}{/if}{if $item->getExtra('mobileSelect') and $item->hasChildren()} d-none d-md-block{/if}" style="background: linear-gradient(135deg, rgba(31,41,55,.85), rgba(31,41,55,.65)); border: 1px solid rgba(99,102,241,.25); border-radius: 16px; box-shadow: 0 16px 40px rgba(56,189,248,.12);"{if $item->getAttribute('id')} id="{$item->getAttribute('id')}"{/if}>
+        <div class="card-header" style="background: rgba(31,41,55,.4); border-bottom: 1px solid rgba(99,102,241,.18); padding: 1rem 1.25rem; border-radius: 16px 16px 0 0;">
+            <h3 class="card-title m-0" style="color: var(--gray-200); font-weight: 700; display: flex; align-items: center; justify-content: space-between;">
+                <span>
+                    {if $item->hasIcon()}<i class="{$item->getIcon()}" style="color: var(--sky-400); margin-right: .5rem;"></i>{/if}
+                    {$item->getLabel()}
+                    {if $item->hasBadge()}<span class="label label-active" style="margin-left: .5rem;">{$item->getBadge()}</span>{/if}
+                </span>
+                <i class="fas fa-chevron-up card-minimise" style="color: var(--sky-400); cursor: pointer;"></i>
             </h3>
         </div>
         <div class="collapsable-card-body">
             {if $item->hasBodyHtml()}
-                <div class="card-body">
+                <div class="card-body" style="background: linear-gradient(135deg, rgba(31,41,55,.85), rgba(31,41,55,.65)); color: var(--gray-300); padding: 1rem 1.25rem;">
                     {$item->getBodyHtml()}
                 </div>
             {/if}
             {if $item->hasChildren()}
-                <div class="list-group list-group-flush d-md-flex{if $item->getChildrenAttribute('class')} {$item->getChildrenAttribute('class')}{/if}" role="tablist">
+                <div class="list-group list-group-flush d-md-flex{if $item->getChildrenAttribute('class')} {$item->getChildrenAttribute('class')}{/if}" role="tablist" style="background: linear-gradient(135deg, rgba(31,41,55,.85), rgba(31,41,55,.65));">
                     {foreach $item->getChildren() as $childItem}
                         {if $childItem->getUri()}
                             <a menuItemName="{$childItem->getName()}"
                                href="{$childItem->getUri()}"
                                class="list-group-item list-group-item-action{if $childItem->isDisabled()} disabled{/if}{if $childItem->getClass()} {$childItem->getClass()}{/if}{if $childItem->isCurrent()} active{/if}"
+                               style="background: transparent; border: none; border-bottom: 1px solid rgba(99,102,241,.15); color: var(--gray-300); padding: .75rem 1.25rem; text-decoration: none; transition: background .2s, color .2s;{if $childItem->isCurrent()} background: rgba(56,189,248,.06); color: var(--sky-400); border-left: 3px solid var(--sky-400);{/if}"
                                {if $childItem->getAttribute('dataToggleTab')}
                                    data-toggle="list" role="tab"
                                {/if}

@@ -7,7 +7,7 @@
     <span></span>
 </div>
 
-<div class="card mb-4">
+<div class="card" style="background: linear-gradient(135deg, rgba(31,41,55,.85), rgba(31,41,55,.65)); border: 1px solid rgba(99,102,241,.25); border-radius: 16px; box-shadow: 0 16px 40px rgba(56,189,248,.12); margin-bottom: 2rem;">
     <div class="card-body">
         <h3 class="card-title">{lang key='store.ox.manage'}</h3>
         <p>{lang key='ox.intro'}</p>

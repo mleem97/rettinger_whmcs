@@ -11,14 +11,14 @@
         </div>
     </section>
 
-    <footer id="footer" class="footer">
+    <footer id="footer" class="footer" style="background: var(--gray-850); border-top: 1px solid rgba(99,102,241,.25); padding: 3rem 0 2rem; margin-top: 4rem;">
         <div class="container">
             <ul class="list-inline mb-7 text-center float-lg-right">
                 {include file="$template/includes/social-accounts.tpl"}
 
                 {if $languagechangeenabled && count($locales) > 1 || $currencies}
                     <li class="list-inline-item">
-                        <button type="button" class="btn" data-toggle="modal" data-target="#modalChooseLanguage">
+                        <button type="button" class="btn" style="color: var(--gray-300); background: transparent; border: 1px solid rgba(99,102,241,.25);" data-toggle="modal" data-target="#modalChooseLanguage">
                             <div class="d-inline-block align-middle">
                                 <div class="iti-flag {if $activeLocale.countryCode === '001'}us{else}{$activeLocale.countryCode|lower}{/if}"></div>
                             </div>
@@ -33,18 +33,18 @@
 
             <ul class="nav justify-content-center justify-content-lg-start mb-7">
                 <li class="nav-item">
-                    <a class="nav-link" href="{$WEB_ROOT}/contact.php">
+                    <a class="nav-link" href="{$WEB_ROOT}/contact.php" style="color: var(--gray-300); font-weight: 600; text-decoration: none; padding: .5rem .75rem;">
                         {lang key='contactus'}
                     </a>
                 </li>
                 {if $acceptTOS}
                     <li class="nav-item">
-                        <a class="nav-link" href="{$tosURL}" target="_blank">{lang key='ordertos'}</a>
+                        <a class="nav-link" href="{$tosURL}" target="_blank" style="color: var(--gray-300); font-weight: 600; text-decoration: none; padding: .5rem .75rem;">{lang key='ordertos'}</a>
                     </li>
                 {/if}
             </ul>
 
-            <p class="copyright mb-0">
+            <p class="copyright mb-0" style="color: var(--gray-500); font-size: .9rem; text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(99,102,241,.15);">
                 {lang key="copyrightFooterNotice" year=$date_year company=$companyname}
             </p>
         </div>
