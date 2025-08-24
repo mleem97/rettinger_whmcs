@@ -1,3 +1,5 @@
+// TODO: TURNSTILE INTEGRATION FÜR BESSERE VERWENDBARKEIT IN ALLEN BROWSERN!
+
 {if $captcha->isEnabled() && $captcha->isEnabledForForm($captchaForm)}
     <div class="text-center{if $containerClass}{$containerClass}{else} row justify-content-center{/if}">
         {if $templatefile == 'homepage'}
