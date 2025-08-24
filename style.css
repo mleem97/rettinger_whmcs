@@ -4,42 +4,32 @@
   Copyright 2025
   ========================================================================= */
 
-/* --- Local fonts: Inter + Font Awesome ---------------------------------- */
+/* --- Local fonts: Inter Variable + Font Awesome ------------------------- */
 /*
   Place the font files under /assets/fonts/ in the repository. Example structure:
-  /assets/fonts/inter/Inter-Regular.woff2
-  /assets/fonts/inter/Inter-SemiBold.woff2
-  /assets/fonts/inter/Inter-Bold.woff2
+  /assets/fonts/inter/Inter-Variable.woff2
+  /assets/fonts/inter/Inter-Italic-Variable.woff2
   /assets/fonts/fontawesome/fa-solid-900.woff2
   /assets/fonts/fontawesome/fa-regular-400.woff2
   /assets/fonts/fontawesome/fa-brands-400.woff2
 
   The files are not committed here (binaries). Add them to the above paths
   in your deployment or copy them into the project to enable offline use.
+  Inter Variable fonts support weights 100-900 in a single file.
 */
 @font-face{
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 100 900;
   font-display: swap;
-  src: url('/assets/fonts/inter/Inter-Regular.woff2') format('woff2'),
-       url('/assets/fonts/inter/Inter-Regular.woff') format('woff');
+  src: url('/assets/fonts/inter/Inter-Variable.woff2') format('woff2-variations');
 }
 @font-face{
   font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
+  font-style: italic;
+  font-weight: 100 900;
   font-display: swap;
-  src: url('/assets/fonts/inter/Inter-SemiBold.woff2') format('woff2'),
-       url('/assets/fonts/inter/Inter-SemiBold.woff') format('woff');
-}
-@font-face{
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/assets/fonts/inter/Inter-Bold.woff2') format('woff2'),
-       url('/assets/fonts/inter/Inter-Bold.woff') format('woff');
+  src: url('/assets/fonts/inter/Inter-Italic-Variable.woff2') format('woff2-variations');
 }
 
 /* Font Awesome (webfont files expected locally) */
@@ -77,8 +67,8 @@
 
 /* --- Theme Variables ----------------------------------------------------- */
 :root{
-  --indigo-500:#6366f1; --indigo-600:#4f46e5; --indigo-400:#818cf8;
-  --sky-400:#38bdf8; --sky-300:#7dd3fc;
+  --indigo-500:#6366f1; --indigo-600:#4f46e5; --indigo-700:#3730a3; --indigo-400:#818cf8;
+  --sky-400:#38bdf8; --sky-500:#0ea5e9; --sky-300:#7dd3fc;
   --gray-900:#111827; --gray-850:#1f2937; --gray-700:#374151;
   --gray-500:#6b7280; --gray-400:#9ca3af; --gray-300:#d1d5db; --gray-200:#e5e7eb;
   --success-500:#10b981; --warning-500:#f59e0b; --danger-500:#ef4444;
