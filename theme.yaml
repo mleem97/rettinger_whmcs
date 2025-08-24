@@ -1,11 +1,8 @@
-# WHMCS Twenty-One Theme Configuration File
+# Rettinger25 Theme Configuration File
 
-name: "Twenty-One"
-description: "The Default Theme for WHMCS 2021"
-author: "WHMCS Limited"
+name: "Rettinger25"
+description: "Rettinger25 - Indigo / Sky / Gray dark customer theme"
+author: "Marvin Meyer"
 properties:
   serverSidePagination: false # Defines client side will handle pagination
-provides:
-  bootstrap: 4.5.3
-  jquery: 1.12.4
-  fontawesome: 5.10.1
+provides: {}

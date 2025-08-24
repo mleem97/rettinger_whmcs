@@ -1,4 +1,4 @@
-<!-- ===== Service Item (Indigo / Sky / Gray Theme) ===== -->
+<!-- ===== Service Item (Rettinger25 — Indigo / Sky / Gray Theme) ===== -->
 <style>
   :root{
     --indigo-500:#6366f1; --indigo-600:#4f46e5; --indigo-400:#818cf8;

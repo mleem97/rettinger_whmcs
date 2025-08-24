@@ -1,6 +1,7 @@
-<!-- ===== Domain Search (Indigo / Sky / Gray Theme) ===== -->
-<!-- Turnstile Script (in <head> deiner Seite einfügen, falls noch nicht vorhanden) -->
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<!-- ===== Domain Search (Rettinger25 — Indigo / Sky / Gray Theme) ===== -->
+<!-- Turnstile Script: optional remote include. If you host Turnstile locally or via your platform, remove this line and ensure the script is loaded once in the page head. -->
+{* Optional: enable Turnstile by configuring your site to load the Turnstile script in the page head. This template leaves the explicit external include commented so the theme itself doesn't force a remote dependency. *}
+<!-- <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script> -->
 
 <style>
   :root{

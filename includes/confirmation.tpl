@@ -1,4 +1,4 @@
-<!-- ========== Modal Theme (Indigo / Sky / Gray) ========== -->
+<!-- ========== Modal Theme (Rettinger25 — Indigo / Sky / Gray) ========== -->
 <style>
   :root{
     --indigo-500:#6366f1; --indigo-600:#4f46e5; --indigo-400:#818cf8;

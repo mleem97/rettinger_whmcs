@@ -1,6 +1,4 @@
-<!--[if lt IE 9]>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-<![endif]-->
+<!-- HTML5 shim removed to avoid remote dependency. If IE8 support is required, provide a local copy and include it conditionally here. -->
 
 <link type="text/css" rel="stylesheet" href="{$BASE_PATH_CSS}/ion.rangeSlider.css" property="stylesheet" />
 <link type="text/css" rel="stylesheet" href="{$BASE_PATH_CSS}/ion.rangeSlider.skinHTML5.css" property="stylesheet" />

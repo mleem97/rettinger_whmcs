@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UI Demo – Rettinger25 (Indigo/Sky/Gray)</title>
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Local icons (no external dependencies) -->
+  <link rel="stylesheet" href="icons/icons.css" />
+</head>
+<body>
+
+  <!-- Minimaler Header für die Demo -->
+  <header class="header">
+    <div class="container row">
+      <a href="#" class="brand">
+  <img src="images/logo.svg" alt="Rettinger25" width="32" height="32" />
+        UI Demo
+      </a>
+      <nav class="nav">
+  <a href="#buttons"><span class="icon icon-square" aria-hidden="true"></span> Buttons</a>
+  <a href="#alerts"><span class="icon icon-bell" aria-hidden="true"></span> Alerts</a>
+  <a href="#breadcrumb"><span class="icon icon-angles-right" aria-hidden="true"></span> Breadcrumb</a>
+  <a href="#services"><span class="icon icon-server" aria-hidden="true"></span> Services</a>
+  <a href="#table"><span class="icon icon-table" aria-hidden="true"></span> Tabelle</a>
+  <a href="#domain"><span class="icon icon-globe" aria-hidden="true"></span> Domain</a>
+  <a href="#modal"><span class="icon icon-window" aria-hidden="true"></span> Modal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Kopfbereich, wird via script.js gefüllt -->
+    <section class="section" id="intro">
+      <h1 class="title-gradient" id="headline"></h1>
+      <p id="subline"></p>
+    </section>
+
+    <!-- Buttons -->
+    <section class="section" id="buttons">
+      <h2 class="title-gradient">Buttons</h2>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+  <button class="btn btn-primary"><span class="icon icon-play-circle" aria-hidden="true"></span> Primary</button>
+  <button class="btn btn-outline"><span class="icon icon-info-circle" aria-hidden="true"></span> Outline</button>
+  <button class="btn btn-success"><span class="icon icon-check" aria-hidden="true"></span> Success</button>
+  <button class="btn btn-default"><span class="icon icon-ellipsis" aria-hidden="true"></span> Default</button>
+  <button class="btn btn-link"><span class="icon icon-link" aria-hidden="true"></span> Link</button>
+      </div>
+    </section>
+
+    <!-- Alerts -->
+    <section class="section" id="alerts">
+      <h2 class="title-gradient">Alerts</h2>
+  <div class="alert alert-info"><span class="icon icon-info-circle" aria-hidden="true"></span> Dies ist eine Info-Nachricht.</div>
+  <div class="alert alert-success"><span class="icon icon-check" aria-hidden="true"></span> Aktion erfolgreich abgeschlossen.</div>
+  <div class="alert alert-warning"><span class="icon icon-exclamation-triangle" aria-hidden="true"></span> Bitte Eingaben prüfen.</div>
+  <div class="alert alert-danger"><span class="icon icon-xmark" aria-hidden="true"></span> Ein Fehler ist aufgetreten.</div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <section class="section" id="breadcrumb">
+      <h2 class="title-gradient">Breadcrumb</h2>
+      <ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="#"><span class="icon icon-house"></span> Start</a></li>
+  <li class="breadcrumb-item"><a href="#"><span class="icon icon-user"></span> Kunde</a></li>
+  <li class="breadcrumb-item active"><span class="icon icon-server"></span> Services</li>
+      </ol>
+    </section>
+
+    <!-- Services (per JS befüllt) -->
+    <section class="section">
+      <h2 class="title-gradient">Services</h2>
+      <div id="services"></div>
+    </section>
+
+    <!-- Tabelle (Linked Accounts; per JS befüllt) -->
+    <section class="section" id="table">
+      <h2 class="title-gradient">Linked Accounts</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th><span class="icon icon-building-columns"></span> Provider</th>
+            <th><span class="icon icon-user"></span> Name</th>
+            <th><span class="icon icon-envelope"></span> Email</th>
+            <th><span class="icon icon-gears"></span> Aktionen</th>
+          </tr>
+        </thead>
+        <tbody id="linked-accounts"></tbody>
+      </table>
+    </section>
+
+    <!-- Domain Search (TLD-Logos per JS befüllt) -->
+    <section class="section home-domain-search" id="domain">
+      <div class="p-5 clearfix">
+  <h2><span class="icon icon-magnifying-glass"></span> Domain-Suche</h2>
+        <div class="input-group-wrapper">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="example.com" />
+            <button class="btn btn-primary"><span class="icon icon-magnifying-glass"></span> Suchen</button>
+            <button class="btn btn-success"><span class="icon icon-exchange"></span> Transfer</button>
+          </div>
+        </div>
+        <ul class="tld-logos" id="tld-logos"></ul>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <section class="section" id="modal">
+      <h2 class="title-gradient">Modal</h2>
+      <button class="btn btn-primary" data-toggle="modal" data-target="#demoModal">
+        <span class="icon icon-window"></span> Modal öffnen
+      </button>
+    </section>
+
+    <div class="modal fade" id="demoModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title"><span class="icon icon-gear"></span> Demo Modal</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Schließen">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p id="modal-body-text"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              <span class="icon icon-xmark"></span> Schließen
+            </button>
+            <button type="button" class="btn btn-primary">
+              <span class="icon icon-save"></span> Speichern
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Local icons JS + Demo JS -->
+  <script src="icons/icons.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-<!-- ===== Flash Messages (Indigo / Sky / Gray Theme) ===== -->
+<!-- ===== Flash Messages (Rettinger25 — Indigo / Sky / Gray Theme) ===== -->
 <style>
   :root{
     --indigo-500:#6366f1; --indigo-600:#4f46e5;
