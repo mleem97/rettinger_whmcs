@@ -153,20 +153,20 @@
     </div>
 
     {if $upsellProduct && $promotion}
-        <div class="card mt-5">
-            <div class="card-body p-5 store-promoted-product upsell-{$upsellProduct->productKey}">
+        <div class="card" style="margin-top: 3rem; background: linear-gradient(135deg, rgba(31,41,55,.85), rgba(31,41,55,.65)); border: 1px solid rgba(99,102,241,.25); border-radius: 16px; box-shadow: 0 16px 40px rgba(56,189,248,.12);">
+            <div class="card-body" style="padding: 2rem; color: var(--gray-200);" class="store-promoted-product upsell-{$upsellProduct->productKey}">
                 <div class="row">
                     <div class="col-sm-3">
-                        <div class="icon">
-                            <img src="{$promotion->getImagePath()}">
+                        <div class="icon" style="text-align: center;">
+                            <img src="{$promotion->getImagePath()}" style="max-width: 100%; height: auto;">
                         </div>
                     </div>
                     <div class="col-sm-9">
 
-                        <h3>{$promotion->getHeadline()}</h3>
-                        <h4>{$promotion->getTagline()}</h4>
+                        <h3 style="color: #fff; font-weight: 700; margin-bottom: .75rem;">{$promotion->getHeadline()}</h3>
+                        <h4 style="color: var(--sky-400); font-weight: 600; margin-bottom: .75rem;">{$promotion->getTagline()}</h4>
                         {if $promotion->getDescription()}
-                            <p>{$promotion->getDescription()}</p>
+                            <p style="color: var(--gray-300); margin-bottom: 1rem;">{$promotion->getDescription()}</p>
                         {/if}
                         {if $promotion->hasFeatures()}
                             <ul class="features">
