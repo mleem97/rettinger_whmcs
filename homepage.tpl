@@ -1,140 +1,147 @@
 {if !empty($productGroups) || $registerdomainenabled || $transferdomainenabled}
-    <h2 class="text-center m-4">{lang key='clientHomePanels.productsAndServices'}</h2>
+    <div class="section">
+        <div class="container">
+            <h2 class="text-center title-gradient">{lang key='clientHomePanels.productsAndServices'}</h2>
 
-    <div class="card-columns home">
-        {foreach $productGroups as $productGroup}
+            <div class="features-grid">
+                {foreach $productGroups as $productGroup}
+                    <div class="feature-card">
+                        <div class="icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <h3>{$productGroup->name}</h3>
+                        <p>{$productGroup->tagline}</p>
+                        <a href="{$productGroup->getRoutePath()}" class="btn btn-primary">
+                            {lang key='browseProducts'}
+                        </a>
+                    </div>
+                {/foreach}
 
-            <div class="card mb-3">
-                <div class="card-body p-lg-4 p-xl-5 text-center">
-                    <h3 class="card-title pricing-card-title">
-                        {$productGroup->name}
-                    </h3>
-                    <p>{$productGroup->tagline}</p>
-                    <a href="{$productGroup->getRoutePath()}" class="btn btn-block btn-outline-primary">
-                        {lang key='browseProducts'}
-                    </a>
-                </div>
+                {if $registerdomainenabled}
+                    <div class="feature-card">
+                        <div class="icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>{lang key='orderregisterdomain'}</h3>
+                        <p>{lang key='secureYourDomain'}</p>
+                        <a href="{$WEB_ROOT}/cart.php?a=add&domain=register" class="btn btn-primary">
+                            {lang key='navdomainsearch'}
+                        </a>
+                    </div>
+                {/if}
+                {if $transferdomainenabled}
+                    <div class="feature-card">
+                        <div class="icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h3>{lang key='transferYourDomain'}</h3>
+                        <p>{lang key='transferExtend'}</p>
+                        <a href="{$WEB_ROOT}/cart.php?a=add&domain=transfer" class="btn btn-primary">
+                            {lang key='transferYourDomain'}
+                        </a>
+                    </div>
+                {/if}
             </div>
-
-        {/foreach}
-
-        {if $registerdomainenabled}
-            <div class="card mb-3">
-                <div class="card-body p-lg-4 p-xl-5 text-center">
-                    <h3 class="card-title pricing-card-title">
-                        {lang key='orderregisterdomain'}
-                    </h3>
-                    <p>{lang key='secureYourDomain'}</p>
-                    <a href="{$WEB_ROOT}/cart.php?a=add&domain=register" class="btn btn-block btn-outline-primary">
-                        {lang key='navdomainsearch'}
-                    </a>
-                </div>
-            </div>
-        {/if}
-        {if $transferdomainenabled}
-            <div class="card mb-3">
-                <div class="card-body p-lg-4 p-xl-5 text-center">
-                    <h3 class="card-title pricing-card-title">
-                        {lang key='transferYourDomain'}
-                    </h3>
-                    <p>{lang key='transferExtend'}</p>
-                    <a href="{$WEB_ROOT}/cart.php?a=add&domain=transfer" class="btn btn-block btn-outline-primary">
-                        {lang key='transferYourDomain'}
-                    </a>
-                </div>
-            </div>
-        {/if}
+        </div>
     </div>
 {/if}
 
-<h2 class="text-center m-4">{lang key='howCanWeHelp'}</h2>
-
-<div class="row my-5 action-icon-btns">
-    <div class="col-6 col-md-4 col-lg">
-        <a href="{routePath('announcement-index')}" class="card-accent-teal">
-            <figure class="ico-container">
-                <i class="fal fa-bullhorn"></i>
-            </figure>
-            {lang key='announcementstitle'}
-        </a>
-    </div>
-    <div class="col-6 col-md-4 col-lg">
-        <a href="serverstatus.php" class="card-accent-pomegranate">
-            <figure class="ico-container">
-                <i class="fal fa-server"></i>
-            </figure>
-            {lang key='networkstatustitle'}
-        </a>
-    </div>
-    <div class="col-6 col-md-4 col-lg">
-        <a href="{routePath('knowledgebase-index')}" class="card-accent-sun-flower">
-            <figure class="ico-container">
-                <i class="fal fa-book"></i>
-            </figure>
-            {lang key='knowledgebasetitle'}
-        </a>
-    </div>
-    <div class="col-6 col-md-4 offset-md-2 offset-lg-0 col-lg">
-        <a href="{routePath('download-index')}" class="card-accent-asbestos">
-            <figure class="ico-container">
-                <i class="fal fa-download"></i>
-            </figure>
-            {lang key='downloadstitle'}
-        </a>
-    </div>
-    <div class="col-6 offset-3 offset-md-0 col-md-4 col-lg">
-        <a href="submitticket.php" class="card-accent-green">
-            <figure class="ico-container">
-                <i class="fal fa-life-ring"></i>
-            </figure>
-            {lang key='homepage.submitTicket'}
-        </a>
+<div class="section">
+    <div class="container">
+        <h2 class="text-center title-gradient">{lang key='howCanWeHelp'}</h2>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon">
+                    <i class="fas fa-bullhorn"></i>
+                </div>
+                <h3>{lang key='announcementstitle'}</h3>
+                <p>Stay updated with our latest news and announcements</p>
+                <a href="{routePath('announcement-index')}" class="btn btn-outline">View Announcements</a>
+            </div>
+            <div class="feature-card">
+                <div class="icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3>{lang key='networkstatustitle'}</h3>
+                <p>Check the status of our servers and network infrastructure</p>
+                <a href="serverstatus.php" class="btn btn-outline">Check Status</a>
+            </div>
+            <div class="feature-card">
+                <div class="icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3>{lang key='knowledgebasetitle'}</h3>
+                <p>Find answers to common questions and learn how to use our services</p>
+                <a href="{routePath('knowledgebase-index')}" class="btn btn-outline">Browse Articles</a>
+            </div>
+            <div class="feature-card">
+                <div class="icon">
+                    <i class="fas fa-download"></i>
+                </div>
+                <h3>{lang key='downloadstitle'}</h3>
+                <p>Download software, tools and resources for your services</p>
+                <a href="{routePath('download-index')}" class="btn btn-outline">View Downloads</a>
+            </div>
+            <div class="feature-card">
+                <div class="icon">
+                    <i class="fas fa-life-ring"></i>
+                </div>
+                <h3>{lang key='homepage.submitTicket'}</h3>
+                <p>Get help from our support team by submitting a support ticket</p>
+                <a href="submitticket.php" class="btn btn-success">Submit Ticket</a>
+            </div>
+        </div>
     </div>
 </div>
 
-<h2 class="text-center m-4">{lang key='homepage.yourAccount'}</h2>
-
-<div class="row my-5 action-icon-btns">
-    <div class="col-6 col-md-4 col-lg">
-        <a href="clientarea.php" class="card-accent-midnight-blue">
-            <figure class="ico-container">
-                <i class="fal fa-home"></i>
-            </figure>
-            {lang key='homepage.yourAccount'}
-        </a>
-    </div>
-    <div class="col-6 col-md-4 col-lg">
-        <a href="clientarea.php?action=services" class="card-accent-midnight-blue">
-            <figure class="ico-container">
-                <i class="far fa-cubes"></i>
-            </figure>
-            {lang key='homepage.manageServices'}
-        </a>
-    </div>
-    {if $registerdomainenabled || $transferdomainenabled || $numberOfDomains}
-        <div class="col-6 col-md-4 col-lg">
-            <a href="clientarea.php?action=domains" class="card-accent-midnight-blue">
-                <figure class="ico-container">
-                    <i class="fal fa-globe"></i>
-                </figure>
-                {lang key='homepage.manageDomains'}
-            </a>
+<div class="section">
+    <div class="container">
+        <h2 class="text-center title-gradient">{lang key='homepage.yourAccount'}</h2>
+        
+        <div class="tech-grid">
+            <div class="tech-card">
+                <div class="icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h3>{lang key='homepage.yourAccount'}</h3>
+                <p>Access your client area dashboard</p>
+                <a href="clientarea.php" class="btn btn-primary">Go to Dashboard</a>
+            </div>
+            <div class="tech-card">
+                <div class="icon">
+                    <i class="fas fa-cubes"></i>
+                </div>
+                <h3>{lang key='homepage.manageServices'}</h3>
+                <p>Manage your active services and products</p>
+                <a href="clientarea.php?action=services" class="btn btn-primary">Manage Services</a>
+            </div>
+            {if $registerdomainenabled || $transferdomainenabled || $numberOfDomains}
+                <div class="tech-card">
+                    <div class="icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>{lang key='homepage.manageDomains'}</h3>
+                    <p>Control your domain names and DNS settings</p>
+                    <a href="clientarea.php?action=domains" class="btn btn-primary">Manage Domains</a>
+                </div>
+            {/if}
+            <div class="tech-card">
+                <div class="icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3>{lang key='homepage.supportRequests'}</h3>
+                <p>View and manage your support tickets</p>
+                <a href="supporttickets.php" class="btn btn-primary">View Tickets</a>
+            </div>
+            <div class="tech-card">
+                <div class="icon">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <h3>{lang key='homepage.makeAPayment'}</h3>
+                <p>Pay your outstanding invoices quickly</p>
+                <a href="clientarea.php?action=masspay&all=true" class="btn btn-success">Make Payment</a>
+            </div>
         </div>
-    {/if}
-    <div class="col-6 col-md-4 offset-md-2 offset-lg-0 col-lg">
-        <a href="supporttickets.php" class="card-accent-midnight-blue">
-            <figure class="ico-container">
-                <i class="fal fa-comments"></i>
-            </figure>
-            {lang key='homepage.supportRequests'}
-        </a>
-    </div>
-    <div class="col-6 offset-3 offset-md-0 col-md-4 col-lg">
-        <a href="clientarea.php?action=masspay&all=true" class="card-accent-midnight-blue">
-            <figure class="ico-container">
-                <i class="fal fa-credit-card"></i>
-            </figure>
-            {lang key='homepage.makeAPayment'}
-        </a>
     </div>
 </div>
