@@ -4,7 +4,7 @@
             <h3 class="card-title m-0">
                 {if $item->hasIcon()}<i class="{$item->getIcon()}"></i>&nbsp;{/if}
                 {$item->getLabel()}
-                {if $item->hasBadge()}&nbsp;<span class="badge float-right">{$item->getBadge()}</span>{/if}
+                {if $item->hasBadge()}&nbsp;<span class="badge">{$item->getBadge()}</span>{/if}
                 <i class="fas fa-chevron-up card-minimise float-right"></i>
             </h3>
         </div>
@@ -49,16 +49,16 @@
                                     <div class="sidebar-menu-item-label">
                                         {$childItem->getLabel()}
                                     </div>
-                                    {if $childItem->hasBadge()}
-                                        <div class="sidebar-menu-item-badge">
-                                            <span class="badge">{$childItem->getBadge()}</span>
-                                        </div>
-                                    {/if}
+                                                        {if $childItem->hasBadge()}
+                                                            <div class="sidebar-menu-item-badge">
+                                                                <span class="badge">{$childItem->getBadge()}</span>
+                                                            </div>
+                                                        {/if}
                                 </div>
                             </a>
                         {else}
                             <div menuItemName="{$childItem->getName()}" class="list-group-item list-group-item-action{if $childItem->getClass()} {$childItem->getClass()}{/if}" id="{$childItem->getId()}">
-                                {if $childItem->hasBadge()}<span class="badge float-right">{$childItem->getBadge()}</span>{/if}
+                                {if $childItem->hasBadge()}<span class="badge">{$childItem->getBadge()}</span>{/if}
                                 {if $childItem->hasIcon()}<i class="{$childItem->getIcon()}"></i>&nbsp;{/if}
                                 {$childItem->getLabel()}
                             </div>

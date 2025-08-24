@@ -949,6 +949,108 @@ body.error-page{ margin:0; font-family: Inter, sans-serif; background:var(--gray
 .error-page .info{ border:1px solid rgba(156,163,175,0.6); padding:12px 14px; background:rgba(129,140,248,0.08); border-radius:10px; margin-top:20px; }
 .error-page .debug{ margin-top:12px; font-family:monospace; font-size:14px; white-space:pre-wrap; color:#e5e7eb; border-top:1px dashed rgba(156,163,175,0.5); padding-top:12px; }
 
+/* --- SocialBee landing page (moved from store/socialbee/index.tpl) ------ */
+/* Scoped under .social-bee to avoid global side effects */
+.social-bee{ --max-width:1248px; --yellow:#f3c500; width:100%; overflow-x:hidden; background:#fff; }
+.social-bee .lp-container{ margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:90px; }
+.social-bee .hero{ max-width:var(--max-width); display:flex; flex-direction:column; align-items:center; gap:24px; margin-top:90px; margin-bottom:78px; color:#212533; }
+.social-bee .hero .content-block__text{ display:flex; flex-direction:column; align-items:center; gap:32px; }
+.social-bee .hero h2{ font-size:40px; font-weight:700; text-align:center; width:772px; }
+.social-bee .hero .hero__description{ font-size:18px; text-align:center; max-width:512px; }
+.social-bee .hero img{ display:block; max-width:100%; }
+.social-bee .planner{ width:100%; min-height:470px; margin-top:60px; margin-bottom:90px; padding-bottom:32px; background-color:#212533; display:flex; justify-content:center; }
+.social-bee .planner img{ display:block; margin-top:-140px; height:auto; }
+.social-bee .content-block{ max-width:var(--max-width); padding:0 24px; display:flex; align-items:center; gap:24px; }
+.social-bee .content-block img{ display:block; height:fit-content; max-width:60%; }
+.social-bee .content-block h2{ font-weight:700; font-size:32px; margin-bottom:50px; position:relative; padding-top:20px; color:#333333; }
+.social-bee .content-block h2::before{ content: ""; position:absolute; top:0; left:0; width:186px; height:8px; background-color:var(--yellow); }
+.social-bee .content-block .content-block__text{ max-width:400px; }
+.social-bee .content-block .content-block__text p{ margin-bottom:36px; line-height:2; }
+.social-bee .content-block .content-block__text button{ background-color:var(--yellow); padding:16px 56px; border:none; border-radius:50px; font-size:18px; font-weight:600; }
+.social-bee .content-block.faq{ padding-bottom:120px; align-items:start; padding-top:90px; border-top:1px solid #ededed; }
+.social-bee .content-block.faq > div:first-child{ flex-basis:60%; }
+.social-bee .action-buttons{ height:140px; margin-top:90px; margin-bottom:90px; background-color:#f5f5f5; width:100%; display:flex; gap:32px; justify-content:center; align-items:center; }
+.social-bee .action-buttons button{ font-size:14px; border-radius:50px; border:2px solid transparent; padding:12px 32px; max-height:fit-content; background-color:transparent; }
+.social-bee .action-buttons .active{ background-color:#fff; border:2px solid #e1e1e1; }
+.social-bee .features.wrapper{ max-width:var(--max-width); margin:0 auto; padding:0px 16px 88px; border-bottom:1px solid #ededed; display:flex; flex-direction:column; align-items:center; }
+.social-bee .features.wrapper button{ background-color:var(--yellow); padding:16px 56px; border:none; border-radius:50px; font-size:18px; font-weight:600; }
+.social-bee .features{ display:flex; row-gap:90px; column-gap:24px; justify-content:center; flex-wrap:wrap; }
+.social-bee .features .features__item{ max-width:380px; text-align:center; }
+.ocial-bee .features .features__item img{ height:188px; width:188px; }
+.social-bee .features .features__item p{ margin-top:48px; line-height:2; }
+.social-bee .pricing__header{ max-width:540px; margin:0 auto -24px auto; display:flex; flex-direction:column; align-items:center; text-align:center; }
+.social-bee .pricing__header h2{ font-size:40px; font-weight:800; max-width:540px; color:#212533; }
+.social-bee .pricing__header p{ margin-top:32px; font-size:18px; }
+
+@media (max-width: 1280px){
+  .social-bee .content-block{ flex-direction:column; align-items:center; }
+  .social-bee .content-block img{ max-width:100%; }
+  .social-bee .content-block .content-block__text{ max-width:100%; }
+  .social-bee .content-block.faq{ align-items:start; gap:0; }
+  .social-bee .pricing-table{ width:auto; min-width:1024px; }
+}
+
+@media (max-width: 1024px){
+  .social-bee .hero{ padding:0 24px; }
+  .social-bee .pricing__header{ padding:0 24px; }
+  .social-bee .pricing-table{ margin:0 24px; }
+  .social-bee .planner img{ display:block; max-width:100%; height:fit-content; }
+  .social-bee .action-buttons{ gap:16px; }
+}
+
+@media (max-width: 768px){
+  .social-bee .hero h2{ width:100%; font-size:28px; padding:0 16px; box-sizing:border-box; }
+  .social-bee .action-buttons{ gap:0; flex-wrap:wrap; }
+  .social-bee .tab{ max-height:fit-content; }
+  .social-bee .tab input:checked ~ .tab__content{ padding:16px; }
+  .social-bee .features .features__item p{ margin-top:24px; }
+}
+
+/* Accordion and tab styles */
+.social-bee .faq{ padding-bottom:90px; }
+.social-bee .tab{ position:relative; max-height:48px; margin-bottom:12px; }
+.social-bee .tab:has(input:checked){ max-height:fit-content; }
+.social-bee .tab input{ position:absolute; opacity:0; z-index:-1; }
+.social-bee .tab__content{ max-height:0; overflow:hidden; }
+.social-bee .tab input:checked ~ .tab__content{ max-height:fit-content; padding:16px 32px; }
+.social-bee .accordion{ overflow:hidden; }
+.social-bee .tab__label, .social-bee .tab__close{ display:flex; background:var(--yellow); cursor:pointer; }
+.social-bee .tab__label{ justify-content:space-between; padding:0.8rem 1rem; }
+.social-bee .tab__label span{ line-height:1.5; }
+.social-bee .tab__label::after{ content:"\276F"; width:1em; height:1em; margin-left:10px; text-align:center; transform:rotate(90deg); transition:all .35s; }
+.social-bee .tab input:checked + .tab__label::after{ transform:rotate(270deg); }
+.social-bee .tab__content ul{ list-style: inside; }
+.social-bee .tab__content .faq__nested-list{ padding-left:32px; list-style: circle; }
+.social-bee .tab__close{ justify-content:flex-end; padding:0.5rem 1rem; font-size:0.75rem; }
+
+.social-bee .pricing-table-container{ width:100%; max-width:100%; overflow-x:auto; max-height:none; }
+.social-bee .hidden{ display:none !important; }
+.social-bee .pricing-table{ width:var(--max-width); min-width:1024px; margin:0 auto; }
+.social-bee .pricing-table__header-row{ background-color:#f5f5f5; }
+.social-bee .pricing-table__row{ display:flex; width:100%; }
+.social-bee .pricing-table__row:hover{ background-color:#fdf9eb; }
+.social-bee .pricing-table__cell{ padding:6px 12px; flex:1; display:flex; align-items:center; justify-content:center; text-align:center; line-height:1.5; font-size:14px; }
+.social-bee .pricing-table__header-cell{ font-weight:bold; padding:24px 15px; }
+.social-bee .pricing-table__feature-name{ flex:1.5; justify-content:flex-start; text-align:left; font-weight:normal; }
+.social-bee .pricing-table__feature-header{ background-color:var(--yellow); color:#333; flex:1.5; }
+.social-bee .pricing-table__icon.pricing-table__icon--check{ color:green; font-weight:bold; }
+.social-bee .pricing-table__icon.pricing-table__icon--cross{ color:red; font-weight:bold; }
+.social-bee .btn{ background-color:var(--yellow); color:#333; padding:10px 15px; border:none; border-radius:20px; cursor:pointer; font-weight:bold; width:100%; max-width:120px; margin:10px auto; }
+.social-bee .btn.small-btn{ font-weight:normal; font-size:14px; padding:8px 12px; }
+.social-bee ~ p{ padding-top:16px; }
+
+/* Panel header variant helpers (used by includes/panel.tpl) */
+.card-title{ padding:.5rem .75rem; border-top-left-radius:12px; border-top-right-radius:12px; }
+.card-title--primary{ background:linear-gradient(135deg,var(--indigo-500),var(--indigo-600)); color:#fff; }
+.card-title--success{ background:linear-gradient(135deg,var(--sky-400),var(--sky-300)); color:#071014; }
+.card-title--warning{ background:linear-gradient(135deg,#f59e0b,#fbbf24); color:#071014; }
+.card-title--danger{ background:linear-gradient(135deg,#ef4444,#f97316); color:#fff; }
+
+/* Sidebar badge positioning — centralized rather than inline float utilities */
+.sidebar-menu-item-wrapper{ display:flex; align-items:center; gap:.75rem; }
+.sidebar-menu-item-badge{ margin-left:auto; }
+.card .badge{ display:inline-block; padding:.25rem .5rem; border-radius:8px; font-weight:800; background:rgba(99,102,241,.12); color:var(--indigo-300); border:1px solid rgba(99,102,241,.12); }
+
 
 /* --- Provider Linking / Social Buttons ----------------------------------- */
 .sub-heading, .sub-heading-borderless{ display:flex; justify-content:center; margin:1.5rem 0 .5rem; }

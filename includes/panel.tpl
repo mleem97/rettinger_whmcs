@@ -1,7 +1,7 @@
 <div class="row w-100 mx-auto mb-3">
     <div class="card w-100">
         {if isset($headerTitle)}
-            <div class="card-title py-1 px-2 text-white font-weight-bold bg-{$type}">
+            <div class="card-title card-title--{$type} py-1 px-2 text-white font-weight-bold">
                 {$headerTitle}
             </div>
         {/if}

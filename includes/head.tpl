@@ -1,9 +1,9 @@
 <!-- Styling -->
-{\WHMCS\View\Asset::fontCssInclude('open-sans-family.css')}
+<!-- Inter variable fonts and Font Awesome are declared in style.css; avoid loading Open Sans to prevent font conflicts -->
 <link href="{assetPath file='all.min.css'}?v={$versionHash}" rel="stylesheet">
 <link href="{assetPath file='theme.min.css'}?v={$versionHash}" rel="stylesheet">
 <link href="{$WEB_ROOT}/assets/css/fontawesome-all.min.css" rel="stylesheet">
-<!-- Rettinger25 Theme - Indigo/Sky/Gray Dark Theme -->
+<!-- Rettinger25 Theme - Indigo/Sky/Gray Dark Theme (central stylesheet) -->
 <link href="{$WEB_ROOT}/style.css?v={$versionHash}" rel="stylesheet">
 {assetExists file="custom.css"}
 <link href="{$__assetPath__}" rel="stylesheet">
