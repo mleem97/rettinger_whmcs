@@ -18,9 +18,12 @@
     box-shadow:0 16px 40px rgba(56,189,248,.12);
     font-size:.95rem;
     font-weight:500;
+    display:flex;
+    align-items:flex-start;
+    gap:.6rem;
   }
 
-  /* Typvarianten */
+  /* Standardfarben je Typ */
   .alert-info{
     border-color: rgba(56,189,248,.35);
     background: linear-gradient(135deg, rgba(56,189,248,.10), rgba(31,41,55,.6));
@@ -36,19 +39,34 @@
     background: linear-gradient(135deg, rgba(245,158,11,.12), rgba(31,41,55,.6));
     color: var(--warning-500);
   }
-  .alert-danger{
+  .alert-danger, .alert-error{
     border-color: rgba(239,68,68,.45);
     background: linear-gradient(135deg, rgba(239,68,68,.12), rgba(31,41,55,.6));
     color: var(--danger-500);
   }
 
-  .text-center{ text-align:center; }
-  .text-right{ text-align:right; }
+  /* Icons */
+  .alert::before{
+    display:inline-block;
+    font-size:1.2rem;
+    line-height:1;
+    margin-top:.05rem;
+  }
+  .alert-info::before    { content:"ℹ️"; }
+  .alert-success::before { content:"✅"; }
+  .alert-warning::before { content:"⚠️"; }
+  .alert-danger::before,
+  .alert-error::before   { content:"❌"; }
+
+  /* Alignment Utilities */
+  .text-center{ text-align:center; justify-content:center; }
+  .text-right{ text-align:right; justify-content:flex-end; }
   .text-left{ text-align:left; }
 </style>
 
 {if $message = get_flash_message()}
-    <div class="alert alert-{if $message.type == "error"}danger{elseif $message.type == 'success'}success{elseif $message.type == 'warning'}warning{else}info{/if}{if isset($align)} text-{$align}{/if}">
+    <div role="alert"
+         class="alert alert-{if $message.type == "error"}danger{elseif $message.type == 'success'}success{elseif $message.type == 'warning'}warning{else}info{/if}{if isset($align)} text-{$align}{/if}">
         {$message.text}
     </div>
 {/if}
