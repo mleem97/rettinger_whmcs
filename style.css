@@ -610,6 +610,99 @@ table.table tbody tr:hover{ background:rgba(56,189,248,.06); }
   color: var(--sky-400); border-color: var(--sky-400);
 }
 
+/* --- Hosting-Specific Components ----------------------------------------- */
+.server-status{
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .25rem .75rem; border-radius: 999px;
+  font-size: .8rem; font-weight: 700;
+}
+.server-status.online{
+  background: rgba(16,185,129,.12); color: var(--success-500);
+  border: 1px solid rgba(16,185,129,.35);
+}
+.server-status.offline{
+  background: rgba(239,68,68,.12); color: var(--danger-500);
+  border: 1px solid rgba(239,68,68,.35);
+}
+.server-status.maintenance{
+  background: rgba(245,158,11,.12); color: var(--warning-500);
+  border: 1px solid rgba(245,158,11,.35);
+}
+.server-status::before{
+  content: ""; width: 8px; height: 8px; border-radius: 50%;
+  background: currentColor; box-shadow: 0 0 6px currentColor;
+}
+
+.progress-bar{
+  background: rgba(31,41,55,.6); border-radius: 999px; height: 8px;
+  overflow: hidden; border: 1px solid rgba(99,102,241,.25);
+}
+.progress-bar-fill{
+  height: 100%; border-radius: 999px; transition: width .3s ease;
+  background: linear-gradient(90deg, var(--sky-400), var(--indigo-500));
+}
+
+.metric-box{
+  text-align: center; padding: 1rem;
+  background: linear-gradient(135deg, rgba(31,41,55,.85), rgba(31,41,55,.65));
+  border: 1px solid rgba(99,102,241,.25); border-radius: 12px;
+}
+.metric-box .value{
+  font-size: 1.5rem; font-weight: 900; color: var(--sky-400);
+  display: block; margin-bottom: .25rem;
+}
+.metric-box .label{
+  color: var(--gray-400); font-size: .85rem; font-weight: 600;
+}
+
+.uptime-badge{
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .5rem .75rem; border-radius: 10px;
+  background: linear-gradient(135deg, rgba(16,185,129,.12), rgba(31,41,55,.6));
+  border: 1px solid rgba(16,185,129,.35); color: var(--success-500);
+  font-weight: 700; font-size: .9rem;
+}
+
+/* --- Data Transfer / Bandwidth Components -------------------------------- */
+.bandwidth-meter{
+  margin: 1rem 0;
+  background: linear-gradient(135deg, rgba(31,41,55,.85), rgba(31,41,55,.65));
+  border: 1px solid rgba(99,102,241,.25); border-radius: 12px;
+  padding: 1rem;
+}
+.bandwidth-meter .header{
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: .75rem;
+}
+.bandwidth-meter .title{
+  font-weight: 700; color: var(--gray-200);
+}
+.bandwidth-meter .usage{
+  color: var(--sky-400); font-weight: 600;
+}
+.bandwidth-meter .bar{
+  background: rgba(31,41,55,.8); border-radius: 999px; height: 12px;
+  overflow: hidden; border: 1px solid rgba(99,102,241,.2);
+}
+.bandwidth-meter .fill{
+  height: 100%; border-radius: 999px; transition: width .5s ease;
+  background: linear-gradient(90deg, var(--sky-400), var(--indigo-500));
+}
+
+/* --- WhatsApp Integration (as mentioned in spec) ------------------------- */
+.whatsapp-float{
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 1000;
+  background: #25d366; color: white; border: none;
+  width: 60px; height: 60px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; box-shadow: 0 8px 24px rgba(37,211,102,.4);
+  transition: transform .2s, box-shadow .2s;
+}
+.whatsapp-float:hover{
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 12px 32px rgba(37,211,102,.6);
+}
+
 /* --- Modals (Generic / Generate Password) -------------------------------- */
 .modal{ display:none; }
 .modal.show{ display:block; }
